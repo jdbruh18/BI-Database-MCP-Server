@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bi-database-mcp-server"
+version = "0.1.0"
+description = "A safe Business Intelligence & SQL Database MCP server with read-only query guards and schema inspection tools."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "mcp>=1.0.0",
+    "pydantic>=2.0.0",
+    "sqlalchemy>=2.0.0",
+    "sqlparse>=0.4.4",
+]
+
+[project.scripts]
+bi-database-mcp = "bi_database_mcp.server:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
